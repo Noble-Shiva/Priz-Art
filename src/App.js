@@ -1,26 +1,51 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './layouts/header/header';
+import Body from './layouts/body/body';
+import Footer from './layouts/footer/footer';
+import Home from './components/Home';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useRouteMatch,
+  useParams
+} from "react-router-dom";
+
+class App extends React.Component {
+  
+  // eslint-disable-next-line no-useless-constructor
+  constructor() {
+    super();
+    this.state = {
+      showFooter : false
+    }
+  }
+
+  showFooter() {
+    this.setState({
+      showFooter : true
+    })
+  }
+
+  render() {
+    return (
+      <Router>
+        <Header></Header>
+        {/* <Body> */}
+          <Switch>
+            <Route path="/" component={Body} exact showFooter={this.showFooter.bind(this)}/>
+            <Route path="/about" component={Home} />
+            {/* <Route path="/contact" component={Contact} /> */}
+            <Route path="*" component={Error} />
+          </Switch>
+        {/* </Body> */}
+        {this.state.showFooter?<Footer></Footer>:''}
+      </Router>
+    )
+  }
 }
 
 export default App;

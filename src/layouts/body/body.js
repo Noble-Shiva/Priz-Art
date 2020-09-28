@@ -8,12 +8,12 @@ class Body extends React.Component {
   constructor() {
     super();
     this.state = {
-      isLoading: true,
+      isLoading: false,
       images: [],
       error: true
     }
       
-    this.getImages()
+    //this.getImages()
   }
   
   getImages() {
@@ -57,7 +57,7 @@ class Body extends React.Component {
           this.state.isLoading
           ?'Loading...'
           :(
-            <ImageGallery photos={this.state.response} /> 
+            <ImageGallery /> 
           )
           
         }

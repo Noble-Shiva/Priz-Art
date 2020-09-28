@@ -6,9 +6,9 @@ import { photos } from "./photos";
 function ImageGallery(images) {
   console.log('Images in fn : ', images);
   let photo = photos;
-  if(images.photos[0].width) {
-    photo = images.photos;
-  }
+  // if(images.photos[0].width) {
+  //   photo = images.photos;
+  // }
   const [currentImage, setCurrentImage] = useState(0);
   const [viewerIsOpen, setViewerIsOpen] = useState(false);
 

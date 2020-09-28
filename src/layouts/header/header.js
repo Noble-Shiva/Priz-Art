@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import '../../App.css';
 
 class Header extends Component {
-    
+
     constructor(props) {
         super(props);
         console.log('Received Props : ', props);
@@ -14,7 +14,7 @@ class Header extends Component {
     }
 
     showMenu() {
-        this.setState({ showMenu : !this.state.showMenu })
+        this.setState({ showMenu: !this.state.showMenu })
     }
 
     render() {
@@ -32,20 +32,20 @@ class Header extends Component {
                     <span>Menu</span>
                 </div>
                 {
-                    this.state.showMenu?
-                    <div className="App-links-menu">
-                        <ul>
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/contact">Contact</Link></li>
-                        </ul>
-                    </div>:''
+                    this.state.showMenu ?
+                        <div className="App-links-menu">
+                            <ul>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/about">About</Link></li>
+                                <li><Link to="/contact">Contact</Link></li>
+                            </ul>
+                        </div> : ''
                 }
-                            
+
             </nav>
         );
     }
-    
+
 }
 
 export default Header

@@ -33,7 +33,7 @@ class Landing extends Component {
                         <div style={{paddingTop: 'calc(100vh - 30vh)', color: 'white'}}>
                             <nav className="navbar navbar-light">
                                 <div className="container">
-                                    <a className="navbar-brand" href="#" style={{color: 'white', fontWeight: 'bold'}}>Priz Art</a>
+                                    <a className="navbar-brand" href="/" style={{color: 'white', fontWeight: 'bold', fontSize: '30px'}}>PrizArt</a>
                                     <div className="expand navbar-expand" id="navbarResponsive">
                                         <ul className="navbar-nav ml-auto">
                                             <li className="nav-item active" style={{padding: '10px 10px 10px 0px', textDecoration: 'none'}}>

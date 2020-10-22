@@ -95,6 +95,7 @@ class Category extends Component {
     }
 
     displayItems = (data) => {
+        console.log(data)
         if (data.length > 0) {
             const list = data.forEach((e) => {
                 return (

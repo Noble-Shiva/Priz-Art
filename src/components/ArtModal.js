@@ -42,7 +42,7 @@ function ArtModal(props) {
 
         setProgress(25)
 
-        const uploadTask = storage.ref(`/${category.categoryId}/${file.name}`).put(file)
+        const uploadTask = storage.ref(`/${category.categoryId}/${artId}`).put(file)
         //initiates the firebase side uploading 
         uploadTask.on('state_changed',
             (snapshot) => {
@@ -58,7 +58,7 @@ function ArtModal(props) {
                 // gets the functions from storage refences the image storage in firebase by the children
                 // gets the download url then sets the image from firebase as the value for the imgUrl key:
 
-                storage.ref(category.categoryId).child(file.name).getDownloadURL().then(url => {
+                storage.ref(category.categoryId).child(artId).getDownloadURL().then(url => {
                     console.log(url);
                     const data = {
                         artTitle: title,

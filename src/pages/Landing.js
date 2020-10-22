@@ -1,78 +1,65 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 
 class Landing extends Component {
     render() {
         return (
             <React.Fragment>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+                {/* <nav className="navbar navbar-expand-lg navbar-light">
                     <div className="container">
-                        <a className="navbar-brand" href="#">Start Bootstrap</a>
-                        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
-                        </button>
+                        <a className="navbar-brand" href="#">Priz Art</a>
                         <div className="collapse navbar-collapse" id="navbarResponsive">
                             <ul className="navbar-nav ml-auto">
                                 <li className="nav-item active">
-                                    <a className="nav-link" href="#">Home
-                <span className="sr-only">(current)</span>
+                                    <a className="nav-link" href="#">Gallery<span className="sr-only">(current)</span>
                                     </a>
                                 </li>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">About</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Services</a>
+                                    <a className="nav-link" href="#">Contact</a>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Contact</a>
+                                    <a className="nav-link" href="#">Admin</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                </nav>
-
-                <header>
-                    <div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
-                        <ol className="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" className="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div className="carousel-inner" role="listbox">
-                            <div className="carousel-item active" style="background-image: url('https://source.unsplash.com/LAaSoL0LrYs/1920x1080')">
-                                <div className="carousel-caption d-none d-md-block">
-                                    <h2 className="display-4">First Slide</h2>
-                                    <p className="lead">This is a description for the first slide.</p>
+                </nav> */}
+                
+                <section>
+                    <div style={{width: '100%', height: '100vh', overflow: 'hidden', backgroundImage:"url(" + "https://source.unsplash.com/LAaSoL0LrYs/1920x1080" + ")", backgroundSize:'cover'}}>
+                        <div style={{paddingTop: 'calc(100vh - 30vh)', color: 'white'}}>
+                            <nav className="navbar navbar-light">
+                                <div className="container">
+                                    <a className="navbar-brand" href="#" style={{color: 'white', fontWeight: 'bold'}}>Priz Art</a>
+                                    <div className="expand navbar-expand" id="navbarResponsive">
+                                        <ul className="navbar-nav ml-auto">
+                                            <li className="nav-item active" style={{padding: '10px 10px 10px 0px', textDecoration: 'none'}}>
+                                                {/* <a className="nav-link" href="/gallery" style={{color: 'white', fontWeight: 'bold'}}>Gallery</a> */}
+                                                <Link to="/gallery" style={{color: 'white', fontWeight: 'bold'}}>Gallery</Link>
+                                            </li>
+                                            <li className="nav-item" style={{padding: '10px', textDecoration: 'none'}}>
+                                                {/* <a className="nav-link" href="/about" style={{color: 'white', fontWeight: 'bold'}}>About</a> */}
+                                                <Link to="/" style={{color: 'white', fontWeight: 'bold'}}>About</Link>
+                                            </li>
+                                            <li className="nav-item" style={{padding: '10px', textDecoration: 'none'}}>
+                                                {/* <a className="nav-link" href="#" style={{color: 'white', fontWeight: 'bold'}}>Contact</a> */}
+                                                <Link to="/" style={{color: 'white', fontWeight: 'bold'}}>Contact</Link>
+                                            </li>
+                                            <li className="nav-item" style={{padding: '10px', textDecoration: 'none'}}>
+                                                {/* <a className="nav-link" href="#" style={{color: 'white', fontWeight: 'bold'}}>Admin</a> */}
+                                                <Link to="/" style={{color: 'white', fontWeight: 'bold'}}>Admin</Link>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="carousel-item" style="background-image: url('https://source.unsplash.com/bF2vsubyHcQ/1920x1080')">
-                                <div className="carousel-caption d-none d-md-block">
-                                    <h2 className="display-4">Second Slide</h2>
-                                    <p className="lead">This is a description for the second slide.</p>
-                                </div>
-                            </div>
-                            <div className="carousel-item" style="background-image: url('https://source.unsplash.com/szFUQoyvrxM/1920x1080')">
-                                <div className="carousel-caption d-none d-md-block">
-                                    <h2 className="display-4">Third Slide</h2>
-                                    <p className="lead">This is a description for the third slide.</p>
-                                </div>
-                            </div>
+                            </nav>
                         </div>
-                        <a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Previous</span>
-                        </a>
-                        <a className="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span className="sr-only">Next</span>
-                        </a>
                     </div>
-                </header>
-                <section className="py-5">
-                    <div className="container">
-                        <h1 className="display-4">Full Page Image Slider</h1>
-                        <p className="lead">The background images for the slider are set directly in the HTML using inline CSS. The images in this snippet are from <a href="https://unsplash.com">Unsplash</a>, taken by <a href="https://unsplash.com/@joannakosinska">Joanna Kosinska</a>!</p>
-                    </div>
+                    
+                    
                 </section>
             </React.Fragment>
         )

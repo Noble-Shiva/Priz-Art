@@ -5,6 +5,7 @@ import Body from './layouts/body/body';
 import Footer from './layouts/footer/footer';
 import Home from './components/Home';
 import { auth } from './config/firebase';
+import Landing from './pages/Landing';
 
 import {
   BrowserRouter as Router,
@@ -45,20 +46,22 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
+      <>
 
         {/* <Body> */}
-        {this.state.currentUser
-          ? <Switch>
-            <Route path="/" component={Admin} />
-            {/* <Route path="/" component={Body} exact showFooter={this.showFooter.bind(this)} /> */}
+        {/* {this.state.currentUser */}
+          {/* ?  */}
+          <Switch>
+            <Route path="/" exact component={Landing} />
+            <Route path="/gallery" component={Body} exact showFooter={this.showFooter.bind(this)} />
             <Route path="/about" component={Home} />
-            <Route path="*" component={Error} />
+            <Route path="*"  component={Error} />
           </Switch>
-          : <Route path="/" component={LoginPage} />}
+           {/* : <Route path="/" component={LoginPage} /> */}
+           {/* } */}
         {/* </Body> */}
         {this.state.showFooter ? <Footer></Footer> : ''}
-      </Router>
+      </>
     )
   }
 }
